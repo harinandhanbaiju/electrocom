@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Electrocom 2.0 - An interactive, premium learning portal containing 30 essential electronic components, 10 popular microcontrollers and single-board computers, and interactive virtual lab animations.">
+  <title>Electrocom 2.0 | Interactive Electronics Lab</title>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="app-sidebar">
+      <div class="brand">
+        <div class="brand-icon">
+          <i data-lucide="cpu"></i>
+        </div>
+        <div class="brand-name">Electrocom 2.0</div>
+      </div>
+      
+      <nav>
+        <ul class="nav-links">
+          <li class="nav-item active" data-target="dashboard">
+            <a href="#dashboard" id="nav-dashboard">
+              <i data-lucide="layout-dashboard"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item" data-target="components">
+            <a href="#components" id="nav-components">
+              <i data-lucide="component"></i>
+              <span>Components</span>
+            </a>
+          </li>
+          <li class="nav-item" data-target="microboards">
+            <a href="#microboards" id="nav-microboards">
+              <i data-lucide="circuit-board"></i>
+              <span>Microboards</span>
+            </a>
+          </li>
+          <li class="nav-item" data-target="lab">
+            <a href="#lab" id="nav-lab">
+              <i data-lucide="activity"></i>
+              <span>Interactive Lab</span>
+            </a>
+          </li>
+          <li class="nav-item" data-target="articles">
+            <a href="#articles" id="nav-articles">
+              <i data-lucide="book-open"></i>
+              <span>Articles</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <p>&copy; 2026 Electrocom</p>
+        <p style="font-size: 10px; margin-top: 5px; color: var(--color-secondary);">Version 2.0 Premium</p>
+      </div>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper">
+      <!-- Top Header -->
+      <header class="top-header">
+        <button class="mobile-menu-btn" id="sidebar-toggle" aria-label="Toggle Navigation">
+          <i data-lucide="menu"></i>
+        </button>
+        
+        <div class="search-container">
+          <i data-lucide="search" class="search-icon"></i>
+          <input type="text" id="global-search" class="search-input" placeholder="Search components, microboards...">
+        </div>
+        
+        <div class="header-actions">
+          <span class="theme-tag">Interactive Learning</span>
+        </div>
+      </header>
+
+      <!-- Main Body -->
+      <main class="content-body">
+        
+        <!-- DASHBOARD SECTION -->
+        <section id="dashboard" class="section-panel active">
+          <div class="dashboard-grid">
+            <div class="dashboard-card welcome-card">
+              <h2>Welcome to <br><span>Electrocom 2.0</span></h2>
+              <p>Explore our visual catalog of thirty essential electronic components and ten beginner-friendly microboards, complete with UK availability, prices, and interactive canvas-based simulation animations.</p>
+              <button class="cta-button" id="start-lab-btn">
+                <span>Enter Interactive Lab</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+            
+            <div class="dashboard-card stats-card">
+              <div class="stat-item">
+                <div class="stat-icon purple">
+                  <i data-lucide="component"></i>
+                </div>
+                <div>
+                  <div class="stat-val" id="stat-comp-count">30</div>
+                  <div class="stat-lbl">Active & Passive Components</div>
+                </div>
+              </div>
+              
+              <div class="stat-item">
+                <div class="stat-icon teal">
+                  <i data-lucide="circuit-board"></i>
+                </div>
+                <div>
+                  <div class="stat-val" id="stat-board-count">10</div>
+                  <div class="stat-lbl">Popular Microboards Rated</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="dashboard-features">
+            <div class="feature-box" id="feat-components">
+              <div class="feature-header">
+                <i data-lucide="layers" style="color: var(--color-primary);"></i>
+                <h3>Component Directory</h3>
+              </div>
+              <p>Search, sort, and inspect 30 fundamental components (resistors, diodes, capacitors, sensors) with their UK creative applications and vector symbols.</p>
+              <span class="feature-arrow">Explore Directory <i data-lucide="chevron-right"></i></span>
+            </div>
+            
+            <div class="feature-box" id="feat-microboards">
+              <div class="feature-header">
+                <i data-lucide="cpu" style="color: var(--color-accent);"></i>
+                <h3>Microboards Guide</h3>
+              </div>
+              <p>Compare microcontroller units (MCU) and single-board computers (SBC) from Arduino to Raspberry Pi, with full UK availability, pricing, pros and cons.</p>
+              <span class="feature-arrow">Compare Boards <i data-lucide="chevron-right"></i></span>
+            </div>
+            
+            <div class="feature-box" id="feat-lab">
+              <div class="feature-header">
+                <i data-lucide="activity" style="color: var(--color-secondary);"></i>
+                <h3>Visual Lab Room</h3>
+              </div>
+              <p>Interactive animations showing Ohm's Law (speed of electrons), PN Junction depletion and recombination, capacitor plots, and live logic gate logic.</p>
+              <span class="feature-arrow">Open Visualizer <i data-lucide="chevron-right"></i></span>
+            </div>
+          </div>
+        </section>
+
+        <!-- COMPONENTS SECTION -->
+        <section id="components" class="section-panel">
+          <div class="filters-bar">
+            <div>
+              <h1 class="section-title">Electronic Components</h1>
+              <p class="section-desc">Interactive index of thirty key parts. Click any card to see full specifications and UK project ideas.</p>
+            </div>
+            <div class="filter-group" id="components-filter-group">
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="Passive">Passives</button>
+              <button class="filter-btn" data-filter="Active">Actives</button>
+              <button class="filter-btn" data-filter="Semiconductor IC">ICs & Regulators</button>
+              <button class="filter-btn" data-filter="Electromechanical & Power">Power & Switches</button>
+              <button class="filter-btn" data-filter="Audio">Audio</button>
+              <button class="filter-btn" data-filter="Sensors & Light">Sensors</button>
+              <button class="filter-btn" data-filter="RF & Timing">RF & Quartz</button>
+            </div>
+          </div>
+          <div class="cards-grid" id="components-grid">
+            <!-- Dynamic components cards will load here -->
+          </div>
+        </section>
+
+        <!-- MICROBOARDS SECTION -->
+        <section id="microboards" class="section-panel">
+          <div class="filters-bar">
+            <div>
+              <h1 class="section-title">Microboards & SBCs</h1>
+              <p class="section-desc">Top ten popular hobbyist, student, and consumer-grade development boards available in the UK.</p>
+            </div>
+            <div class="filter-group" id="boards-filter-group">
+              <button class="filter-btn secondary active" data-filter="all">All Boards</button>
+              <button class="filter-btn secondary" data-filter="MCU">Microcontrollers (MCU)</button>
+              <button class="filter-btn secondary" data-filter="SBC">Single-Board Computers (SBC)</button>
+              <button class="filter-btn secondary" data-filter="wireless">Wireless Enabled</button>
+            </div>
+          </div>
+          <div class="cards-grid" id="boards-grid">
+            <!-- Dynamic board cards will load here -->
+          </div>
+        </section>
+
+        <!-- INTERACTIVE LAB SECTION -->
+        <section id="lab" class="section-panel">
+          <h1 class="section-title">Interactive Visual Lab</h1>
+          <p class="section-desc">Engage with virtual circuit animations demonstrating physics and electronic laws in real time.</p>
+          
+          <div class="lab-container">
+            <div class="lab-sidebar">
+              <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.5rem; color: white;">Animations Directory</h3>
+              <ul class="lab-nav">
+                <li class="lab-nav-item active" data-lab="ohms-law">
+                  <i data-lucide="gauge"></i>
+                  <span>Ohm's Law (Flow)</span>
+                </li>
+                <li class="lab-nav-item" data-lab="pn-junction">
+                  <i data-lucide="shuffle"></i>
+                  <span>PN Junction Flow</span>
+                </li>
+                <li class="lab-nav-item" data-lab="capacitor">
+                  <i data-lucide="battery-charging"></i>
+                  <span>Capacitor Timing</span>
+                </li>
+                <li class="lab-nav-item" data-lab="logic-gates">
+                  <i data-lucide="binary"></i>
+                  <span>Logic Gates Room</span>
+                </li>
+              </ul>
+              
+              <!-- Control panels populated dynamically -->
+              <div class="lab-controls-pane" id="lab-controls">
+                <!-- Ohm's Law Controls -->
+                <div class="lab-controls-group active-controls" id-ctrl="ohms-law">
+                  <h4 style="font-family: var(--font-heading); color: white; margin-bottom: 1rem;">Ohm's Law Parameters</h4>
+                  
+                  <div class="lab-control-group">
+                    <label>Voltage (V): <span class="val-display" id="ohms-v-val">9.0V</span></label>
+                    <input type="range" class="lab-slider" id="ohms-v-slider" min="1" max="15" step="0.5" value="9">
+                  </div>
+                  
+                  <div class="lab-control-group" style="margin-top: 1rem;">
+                    <label>Resistance (R): <span class="val-display" id="ohms-r-val">300 Ω</span></label>
+                    <input type="range" class="lab-slider" id="ohms-r-slider" min="50" max="1000" step="10" value="300">
+                  </div>
+                  
+                  <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(0,0,0,0.2); border-radius: 8px; border: 1px solid var(--border-color); font-size: 0.85rem;">
+                    <p style="color: var(--text-muted);">Current: <span id="ohms-i-val" style="color: var(--color-success); font-weight: 700; font-family: monospace; font-size: 1rem;">30.0 mA</span></p>
+                    <p style="margin-top: 0.25rem; font-style: italic; color: var(--text-muted);">Formula: I = V / R</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="lab-viewer">
+              <div class="lab-viewer-header">
+                <h3 id="lab-title">Ohm's Law Flow Animator</h3>
+                <p id="lab-description">Adjust voltage and resistance to observe how the flow rate of electrons changes in a circuit and affects bulb brightness.</p>
+              </div>
+              
+              <div class="canvas-container">
+                <canvas id="lab-canvas" class="lab-canvas"></canvas>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ARTICLES SECTION -->
+        <section id="articles" class="section-panel">
+          <div class="articles-filters-bar">
+            <div id="articles-filter-group" class="filter-group">
+              <button class="filter-btn active" data-afilter="all">All Topics</button>
+              <button class="filter-btn" data-afilter="Fundamentals">Fundamentals</button>
+              <button class="filter-btn" data-afilter="Semiconductors">Semiconductors</button>
+              <button class="filter-btn" data-afilter="Signal Processing">Signal Processing</button>
+              <button class="filter-btn" data-afilter="Communication">Communication</button>
+              <button class="filter-btn" data-afilter="Applied Electronics">Applied</button>
+              <button class="filter-btn" data-afilter="Advanced">Advanced</button>
+              <button class="filter-btn" data-afilter="Digital">Digital</button>
+            </div>
+          </div>
+
+          <div class="articles-grid" id="articles-grid">
+            <!-- Article cards rendered by app.js -->
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" id="detail-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title-wrapper">
+          <h2 id="modal-item-name">Component Name</h2>
+          <div class="subtitle" id="modal-item-cat">Category</div>
+        </div>
+        <button class="modal-close" id="modal-close-btn" aria-label="Close modal">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="detail-symbol-box" id="modal-symbol-container" style="display: none;">
+          <!-- SVG element inserts dynamically -->
+        </div>
+        
+        <div class="modal-section" id="modal-sec-importance">
+          <h4><i data-lucide="info"></i> Why It Matters</h4>
+          <p id="modal-importance">Details here...</p>
+        </div>
+        
+        <div class="modal-section" id="modal-sec-uses">
+          <h4><i data-lucide="pocket"></i> Common Uses</h4>
+          <p id="modal-uses">Details here...</p>
+        </div>
+
+        <div class="modal-section" id="modal-sec-symbol" style="display: none;">
+          <h4><i data-lucide="image"></i> Circuit Symbol Description</h4>
+          <p id="modal-symbol-desc">Details here...</p>
+        </div>
+        
+        <div class="modal-section" id="modal-sec-proscons" style="display: none;">
+          <h4><i data-lucide="scale"></i> Key Comparisons</h4>
+          <div class="pros-cons-grid">
+            <div>
+              <h5 style="color: var(--color-success); font-family: var(--font-heading); margin-bottom: 0.5rem; font-size: 0.95rem;">Advantages</h5>
+              <ul class="bullet-list pros" id="modal-advantages">
+                <!-- advantages load dynamically -->
+              </ul>
+            </div>
+            <div>
+              <h5 style="color: var(--color-danger); font-family: var(--font-heading); margin-bottom: 0.5rem; font-size: 0.95rem;">Disadvantages</h5>
+              <ul class="bullet-list cons" id="modal-disadvantages">
+                <!-- disadvantages load dynamically -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal-section" id="modal-sec-creative">
+          <h4><i data-lucide="sparkles"></i> Creative Project Idea (UK)</h4>
+          <p id="modal-creative-idea">Details here...</p>
+        </div>
+
+        <div class="modal-section" id="modal-sec-uk" style="display: none;">
+          <h4><i data-lucide="shopping-bag"></i> UK Price & Availability</h4>
+          <p id="modal-uk-info">Details here...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dependencies -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
