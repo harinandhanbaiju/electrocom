@@ -369,6 +369,24 @@ p.section-desc {
   margin-bottom: 1.5rem;
 }
 
+.welcome-points {
+  list-style: disc;
+  margin: 0 0 1.5rem 1.4rem;
+  padding: 0;
+  color: #d1d5db;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.welcome-points li {
+  line-height: 1.55;
+}
+
+.welcome-card .cta-button {
+  align-self: flex-end;
+  margin-top: 0.25rem;
+}
+
 .cta-button {
   background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   border: none;
