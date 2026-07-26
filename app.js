@@ -39,6 +39,7 @@ let currentTab = 'dashboard';
 let activeComponentFilter = 'all';
 let activeBoardFilter = 'all';
 let activeArticleFilter = 'all';
+let activeArticleId = null;
 let searchQuery = '';
 
 // DOM Elements
@@ -46,6 +47,8 @@ const sidebarLinks = document.querySelectorAll('.nav-links .nav-item');
 const panels = document.querySelectorAll('.section-panel');
 const componentsGrid = document.getElementById('components-grid');
 const boardsGrid = document.getElementById('boards-grid');
+const articlesGrid = document.getElementById('articles-grid');
+const articleReader = document.getElementById('article-reader');
 const globalSearch = document.getElementById('global-search');
 const sidebarToggle = document.getElementById('sidebar-toggle');
 const sidebarEl = document.getElementById('app-sidebar');
@@ -215,6 +218,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Render articles initially
+  if (gurukulamArticles.length > 0) {
+    activeArticleId = gurukulamArticles[0].id;
+  }
   renderArticles();
 });
 
@@ -1510,25 +1516,35 @@ function drawLogicGatesLab() {
 
 // ─── Articles Renderer ────────────────────────────────────────────────────────
 function renderArticles() {
-  const grid = document.getElementById('articles-grid');
-  if (!grid) return;
+  if (!articlesGrid) return;
 
   const filtered = activeArticleFilter === 'all'
     ? gurukulamArticles
     : gurukulamArticles.filter(a => a.category === activeArticleFilter);
 
+  if (filtered.length > 0) {
+    const selectedArticle = filtered.find(article => article.id === activeArticleId) || filtered[0];
+    if (selectedArticle && selectedArticle.id !== activeArticleId) {
+      activeArticleId = selectedArticle.id;
+    }
+    renderArticleReader(selectedArticle);
+  } else {
+    renderArticleReader(null);
+  }
+
   if (filtered.length === 0) {
-    grid.innerHTML = `
+    articlesGrid.innerHTML = `
       <div style="grid-column:1/-1;text-align:center;padding:3rem;">
         <p style="color:var(--text-muted);font-size:1.1rem;">No articles found for this category.</p>
       </div>`;
     return;
   }
 
-  grid.innerHTML = filtered.map(article => `
-    <a class="article-card" href="${article.url}" target="_blank" rel="noopener"
+  articlesGrid.innerHTML = filtered.map(article => `
+    <button class="article-card ${article.id === activeArticleId ? 'is-selected' : ''}" type="button"
+       data-article-id="${article.id}"
        style="--art-color:${article.color}; --art-glow:${article.glow};"
-       id="article-${article.id}">
+       id="article-${article.id}" aria-pressed="${article.id === activeArticleId ? 'true' : 'false'}">
       <div class="article-card-glow"></div>
       <div class="article-card-top">
         <span class="article-emoji" aria-hidden="true">${article.emoji}</span>
@@ -1541,13 +1557,68 @@ function renderArticles() {
       </div>
       <div class="article-footer">
         <span class="article-read-link">
-          Read Article
+          Read In Page
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
           </svg>
         </span>
-        <span class="article-source">Electronics Gurukulam</span>
+        <span class="article-source">Open in site</span>
       </div>
-    </a>
+    </button>
   `).join('');
+}
+
+if (articlesGrid) {
+  articlesGrid.addEventListener('click', (event) => {
+    const card = event.target.closest('.article-card');
+    if (!card) return;
+
+    const articleId = Number(card.getAttribute('data-article-id'));
+    const article = gurukulamArticles.find(item => item.id === articleId);
+    if (!article) return;
+
+    activeArticleId = article.id;
+    renderArticles();
+  });
+}
+
+function renderArticleReader(article) {
+  if (!articleReader) return;
+
+  if (!article) {
+    articleReader.innerHTML = `
+      <div class="article-reader-empty">
+        <h2>Select an article</h2>
+        <p>Click any card below to read the article content here without leaving the site.</p>
+      </div>`;
+    return;
+  }
+
+  articleReader.innerHTML = `
+    <article class="article-reader-card" style="--art-color:${article.color}; --art-glow:${article.glow};">
+      <div class="article-reader-header">
+        <div>
+          <p class="article-reader-kicker">In-page article reader</p>
+          <h2>${article.title}</h2>
+          <p class="article-reader-meta">${article.category} · Electronics Gurukulam</p>
+        </div>
+        <div class="article-reader-emoji" aria-hidden="true">${article.emoji}</div>
+      </div>
+
+      <p class="article-reader-summary">${article.summary}</p>
+
+      <div class="article-reader-grid">
+        <section class="article-reader-panel">
+          <h3>Key topics</h3>
+          <div class="article-tags">
+            ${article.tags.map(tag => `<span class="article-tag">${tag}</span>`).join('')}
+          </div>
+        </section>
+
+        <section class="article-reader-panel">
+          <h3>How to use this page</h3>
+          <p>Open the cards below to switch between topics. The article stays inside this app, so you can read without jumping to another website.</p>
+        </section>
+      </div>
+    </article>`;
 }
