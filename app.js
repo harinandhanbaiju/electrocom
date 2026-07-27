@@ -72,6 +72,8 @@ const modalSecCreative = document.getElementById('modal-sec-creative');
 const modalCreativeIdea = document.getElementById('modal-creative-idea');
 const modalSecUK = document.getElementById('modal-sec-uk');
 const modalUKInfo = document.getElementById('modal-uk-info');
+const modalSecArticle = document.getElementById('modal-sec-article');
+const modalArticleContent = document.getElementById('modal-article-content');
 
 // Interactive Lab State & Variables
 let activeLab = 'ohms-law';
@@ -384,6 +386,7 @@ function showComponentDetails(comp) {
   modalSecSymbol.style.display = 'block';
   modalSecProsCons.style.display = 'none';
   modalSecUK.style.display = 'none';
+  modalSecArticle.style.display = 'none';
   
   modalItemName.innerText = comp.name;
   modalItemCat.innerText = comp.category + ' Component';
@@ -404,6 +407,7 @@ function showBoardDetails(board) {
   modalSecSymbol.style.display = 'none';
   modalSecProsCons.style.display = 'block';
   modalSecUK.style.display = 'block';
+  modalSecArticle.style.display = 'none';
   
   modalItemName.innerText = board.name;
   modalItemCat.innerText = board.category;
@@ -1541,28 +1545,23 @@ function renderArticles() {
   }
 
   articlesGrid.innerHTML = filtered.map(article => `
-    <button class="article-card ${article.id === activeArticleId ? 'is-selected' : ''}" type="button"
+    <button class="item-card article-card ${article.id === activeArticleId ? 'is-selected' : ''}" type="button"
        data-article-id="${article.id}"
        style="--art-color:${article.color}; --art-glow:${article.glow};"
        id="article-${article.id}" aria-pressed="${article.id === activeArticleId ? 'true' : 'false'}">
-      <div class="article-card-glow"></div>
-      <div class="article-card-top">
-        <span class="article-emoji" aria-hidden="true">${article.emoji}</span>
-        <span class="article-category-badge">${article.category}</span>
+      <div class="card-top">
+        <span class="item-num">#${article.id}</span>
+        <span class="item-category">${article.category}</span>
       </div>
-      <h3 class="article-title">${article.title}</h3>
-      <p class="article-summary">${article.summary}</p>
+      <div class="article-hero-preview" aria-hidden="true">${article.emoji}</div>
+      <h3>${article.title}</h3>
+      <p class="card-desc">${article.summary}</p>
       <div class="article-tags">
         ${article.tags.map(t => `<span class="article-tag">${t}</span>`).join('')}
       </div>
-      <div class="article-footer">
-        <span class="article-read-link">
-          Read In Page
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
-          </svg>
-        </span>
-        <span class="article-source">Open in site</span>
+      <div class="card-footer-info">
+        <span class="price-tag">Open popup</span>
+        <i data-lucide="arrow-up-right" style="width: 16px; height: 16px;"></i>
       </div>
     </button>
   `).join('');
@@ -1579,7 +1578,34 @@ if (articlesGrid) {
 
     activeArticleId = article.id;
     renderArticles();
+    showArticleDetails(article);
   });
+}
+
+function escapeHtml(text) {
+  return String(text)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+
+function showArticleDetails(article) {
+  modalSymbolContainer.style.display = 'none';
+  modalSecSymbol.style.display = 'none';
+  modalSecProsCons.style.display = 'none';
+  modalSecUK.style.display = 'none';
+  modalSecCreative.style.display = 'none';
+  modalSecImportance.style.display = 'none';
+  modalSecUses.style.display = 'none';
+  modalSecArticle.style.display = 'block';
+
+  modalItemName.innerText = article.title;
+  modalItemCat.innerText = article.category + ' Article';
+  modalArticleContent.innerHTML = article.contentHtml || `<p>${escapeHtml(article.summary)}</p>`;
+
+  openModal();
 }
 
 function renderArticleReader(article) {
@@ -1595,30 +1621,23 @@ function renderArticleReader(article) {
   }
 
   articleReader.innerHTML = `
-    <article class="article-reader-card" style="--art-color:${article.color}; --art-glow:${article.glow};">
+    <article class="item-card article-reader-card" style="--art-color:${article.color}; --art-glow:${article.glow};">
       <div class="article-reader-header">
         <div>
-          <p class="article-reader-kicker">In-page article reader</p>
+          <p class="article-reader-kicker">Featured article</p>
           <h2>${article.title}</h2>
           <p class="article-reader-meta">${article.category} · Electronics Gurukulam</p>
         </div>
         <div class="article-reader-emoji" aria-hidden="true">${article.emoji}</div>
       </div>
 
-      <p class="article-reader-summary">${article.summary}</p>
-
-      <div class="article-reader-grid">
-        <section class="article-reader-panel">
-          <h3>Key topics</h3>
-          <div class="article-tags">
-            ${article.tags.map(tag => `<span class="article-tag">${tag}</span>`).join('')}
-          </div>
-        </section>
-
-        <section class="article-reader-panel">
-          <h3>How to use this page</h3>
-          <p>Open the cards below to switch between topics. The article stays inside this app, so you can read without jumping to another website.</p>
-        </section>
+      <p class="article-summary">${article.summary}</p>
+      <div class="article-tags">
+        ${article.tags.map(tag => `<span class="article-tag">${tag}</span>`).join('')}
+      </div>
+      <div class="card-footer-info">
+        <span class="price-tag">Click a card to open popup</span>
+        <i data-lucide="book-open" style="width: 16px; height: 16px;"></i>
       </div>
     </article>`;
 }

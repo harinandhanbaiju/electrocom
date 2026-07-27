@@ -584,10 +584,23 @@ const microboardsData = [
 const gurukulamArticles = [
   {
     id: 1,
-    title: "Ohm's Law — Interactive Simulation",
+    title: "Ohm's Law",
     category: "Fundamentals",
     summary: "Explore the foundational relationship V = I × R with a live PhET simulation. Adjust voltage and resistance to see exactly how current responds, and understand why this simple law underpins every circuit design from LEDs to power amplifiers.",
     tags: ["V=IR", "Voltage", "Current", "Resistance", "Simulation"],
+    contentHtml: `
+      <h3>Ohm's Law</h3>
+      <p>The unit for resistance is the ohm, or, and the symbol in equations is <em>R</em>. Now we come to the most important equation in electronics:</p>
+      <p><strong>(2.1a)</strong> <em>V = IR</em><br>with <em>V</em> in volts, <em>I</em> in amps, <em>R</em> in ohms. This is Ohm's Law. We will use it so much that it bears being rewritten in its two other forms:</p>
+      <p><strong>(2.1b)</strong> <em>I = V/R</em></p>
+      <p>and:</p>
+      <p><strong>(2.1c)</strong> <em>R = V/I</em></p>
+      <p>These are used so frequently that you need to know them by heart.</p>
+      <p>Ohm's Law tells us that placing a <a href="https://www.sciencedirect.com/topics/engineering/steady-voltage" target="_blank" rel="noopener noreferrer">steady voltage</a> across a material causes a proportional steady current to flow.</p>
+      <p>Even insulators and conductors have resistance. Insulators have very high resistance; tens or hundreds of MΩ or more, so that for the normal voltages that we use an unmeasurably small current flows. If the voltage is raised to sufficiently high levels, usually at least a kV, a condition called 'breakdown' occurs; electrons are blasted free from atoms within the structure of the material, and its essential nature is changed. You will know if this happens; there is a nasty burning smell, and things stop working. It is a condition which we try to avoid.</p>
+      <p>Conductors are the opposite; their resistance is very low, small fractions of an ohm typically. The commonest conductor that we use is copper. We cannot normally measure the voltage across a piece of copper wire, unless it is long. We can find out, from catalogues and so on, the resistance per metre of any given type of wire; this depends on the wire, but figures of around 0.1 Ω/m are typical. Occasionally we need to find this out and calculate the total resistance of a length of cable when our wires are very long, in a large system. The wire will also have a maximum current rating, which is what we can pass through it before the amount of heat generated in it becomes dangerous to its structure. The <a href="https://www.sciencedirect.com/topics/engineering/insulating-material" target="_blank" rel="noopener noreferrer">insulating material</a> around it may melt, causing it to short to things that it shouldn't, or the conductor itself. We only need know that we should stay comfortably within the maximum rated current for a conductor. In essence, anything can be destroyed with too much voltage/current.</p>
+      <p>To summarize, we have three distinct classes of material; conductors, insulators and resistors. Conductors connect our circuit up and have very low resistance. We assume that the voltage is the same at both ends of them unless they are very long or current is very high. They are just vessels to carry current. Insulators are the separating material between different points in a circuit that need to be kept apart and have very high resistance. Resistors are electrical components having a known resistance. We can predict the current through them for any given voltage, or vice versa, using the all-powerful Ohm's Law, <em>V = IR</em>.</p>
+    `,
     url: "https://electronicsgurukulam.blogspot.com/2015/07/ohms-law.html",
     emoji: "⚡",
     color: "#a855f7",
@@ -599,6 +612,39 @@ const gurukulamArticles = [
     category: "Semiconductors",
     summary: "At room temperature Silicon has far fewer thermally generated carriers, giving lower leakage (ICBO) than Germanium. Silicon also withstands higher temperatures, offers greater Peak Inverse Voltage, and is cheaply extracted from sand — making it the universal choice for modern semiconductor devices.",
     tags: ["Silicon", "Germanium", "Semiconductor", "BJT", "PN Junction"],
+    contentHtml: `
+      <p>In semiconductor technology, silicon and germanium play crucial roles due to their intrinsic properties as semiconducting materials. Historically, germanium was used in the early development of semiconductor devices. However, silicon has become the dominant material in the industry. This shift can be attributed to several key factors that favor silicon over germanium in most semiconductor applications.</p>
+
+      <h3>Why is silicon preferred over germanium?</h3>
+      <p><img src="https://electronicslesson.com/wp-content/uploads/2024/04/Why-is-Silicon-Preferred-over-Germanium-1024x536.png" alt="why-is-silicon-preferred-over-germanium"></p>
+
+      <h4>Abundance and Cost-Effectiveness</h4>
+      <p>Silicon is the second most abundant element in the Earth’s crust after oxygen, making it readily available and significantly cheaper than germanium. This abundance leads to a lower cost for raw materials, which is a critical factor in large-scale production environments. In contrast, germanium is much rarer and, therefore, more expensive to procure, which limits its feasibility for widespread use in semiconductor manufacturing.</p>
+
+      <h4>Thermal Stability</h4>
+      <p>Silicon has a higher melting point (about 1414 degrees Celsius) compared to germanium (about 938 degrees Celsius). This higher thermal stability makes silicon more suitable for high-temperature applications, such as power electronics and automotive systems. Devices made from silicon can operate at higher temperatures without the risk of performance degradation, which is a significant advantage in ensuring the reliability and longevity of electronic components.</p>
+
+      <h4>Electrical Properties</h4>
+      <p>While both silicon and germanium are group IV elements and share similar electronic band structures, silicon’s larger band gap (1.12 eV at room temperature compared to germanium’s 0.66 eV) makes it more effective at maintaining its semiconducting properties at higher temperatures. The wider band gap reduces the leakage current in silicon-based devices, enhancing their performance in a broader range of temperatures and reducing power consumption, which is particularly important in mobile and computing applications. The following electrical properties of silicon make it superior to germanium.</p>
+
+      <h4>Higher PIV Rating:</h4>
+      <p>A silicon diode’s PIV (peak inverse voltage) value is approximately 1000 V, which is higher than that of germanium diodes. The PIV values for germanium diodes are closer to 400 V, while for silicon diodes, they are around 500-600 V.</p>
+
+      <h4>Greater Working temperature:</h4>
+      <p>Silicon can withstand high temperatures of up to 150 degrees Celsius without sustaining damage to its components. However, g-germanium can only handle temperatures of up to 70 degrees Celsius, and the structure of germanium can become damaged at temperatures exceeding 100 degrees Celsius.</p>
+
+      <h4>Lower Leakage Current:</h4>
+      <p>Leakage current can significantly impact performance in semiconductor devices, especially diodes and transistors. Devices made from materials with smaller band gaps (like Germanium) will inherently have higher leakage currents because more charge carriers are thermally generated. In contrast, the wider band gap of Silicon results in fewer carriers being thermally generated at the same temperature, thereby reducing the leakage current.</p>
+
+      <h4>Oxide Quality</h4>
+      <p>One of the most significant advantages of silicon in semiconductor technology is its ability to naturally form a stable, high-quality oxide layer (silicon dioxide) when exposed to oxygen. This oxide layer is integral in the manufacturing of electronic devices, serving as an insulator and protecting the pure silicon at the heart of the device. Silicon dioxide layers are used extensively to fabricate integrated circuits and microchips. They are crucial for the function of MOSFETs (metal-oxide-semiconductor field-effect transistors), which are the building blocks of most modern electronics. Germanium oxides, in contrast, are less stable and do not provide the same level of insulation and protection.</p>
+
+      <h4>Industry Standard and Integration</h4>
+      <p>The extensive history and evolution of silicon-based technology have led to a well-established industry standard that benefits from a vast body of research, development, and specialized equipment tailored specifically for silicon processing. This makes the integration of new silicon-based technologies into existing systems more seamless and cost-effective. Additionally, the semiconductor industry’s infrastructure and supply chain is optimized for silicon, which further discourages a shift towards germanium except in niche applications where its specific properties provide distinct advantages (like certain types of sensors and high-speed electronics).</p>
+
+      <h4>Conclusion</h4>
+      <p>Silicon’s dominance in semiconductor technology is based on a combination of material properties, economic factors, and industry standards that collectively outweigh the benefits offered by germanium in most practical applications. While germanium still has its uses in specialized fields, silicon’s versatility, cost-effectiveness, and excellent performance characteristics ensure that it remains the cornerstone of electronic device manufacturing, and therefore, silicon is preferred over germanium.</p>
+    `,
     url: "https://electronicsgurukulam.blogspot.com/2013/10/why-silicon-and-not-germanium.html",
     emoji: "🔬",
     color: "#14b8a6",
@@ -610,6 +656,57 @@ const gurukulamArticles = [
     category: "Signal Processing",
     summary: "A six-minute video that demystifies the Fourier Transform — the mathematical tool that decomposes any signal into its constituent sine waves. Indispensable for audio engineering, telecommunications, image processing and every branch of digital signal processing.",
     tags: ["Fourier", "DSP", "Frequency Domain", "Spectrum", "Maths"],
+    contentHtml: `
+      <p>Fourier transform is a mathematical model that decomposes a function or signal into its constituent frequencies. It helps to transform the signals between two different domains, like transforming the frequency domain to the time domain. The Fourier Transform decomposes a complex signal into simpler sine and cosine waves of different frequencies and amplitudes, which can be combined again to reconstruct the original signal. Decomposing a signal into sine and cosine waves using Fourier Transform. The generalized form of the complex Fourier series is referred to as the Fourier transform.</p>
+
+      <p>It is a powerful tool used in many fields, such as signal processing, physics, and engineering, to analyze the frequency content of signals or functions that vary over time or space. It is used to represent the mathematical functions and the frequency domain. It helps to expand the non-periodic functions and convert them into easy sinusoidal functions.</p>
+
+      <h3>Continuous Fourier Transform (CFT)</h3>
+      <p>For a continuous-time function <em>f(t)</em>, the Fourier transform <em>F(ω)</em> is defined as:</p>
+      <p><strong>F(ω) = ∫<sub>−∞</sub><sup>∞</sup> f(t)e<sup>iωt</sup> dt</strong></p>
+      <p>where:</p>
+      <ul>
+        <li><em>F(ω)</em> is the Fourier transform of <em>f(t)</em></li>
+        <li><em>ω</em> is the angular frequency</li>
+        <li><em>i</em> is the imaginary number (<em>i</em><sup>2</sup> = -1)</li>
+        <li><em>t</em> is time</li>
+      </ul>
+
+      <h3>Fourier Transform Formulas</h3>
+      <p>The formula for the Fourier transforms of a function <em>f(x)</em> is given by:</p>
+      <p><strong>f(x) = ∫<sub>−∞</sub><sup>∞</sup> F(k)e<sup>2πikx</sup> dk</strong></p>
+      <p><strong>F(k) = ∫<sub>−∞</sub><sup>∞</sup> f(x)e<sup>-2πikx</sup> dx</strong></p>
+      <p>There are two types of Fourier transform i.e., forward Fourier transform and inverse Fourier transform.</p>
+
+      <h3>Forward Fourier Transform</h3>
+      <p>The forward Fourier transform is a mathematical technique used to transform a time-domain signal into its frequency-domain representation. This transformation is fundamental in various fields, including signal processing, image processing, and communications. Forward Fourier Transform is represented by <em>F(k)</em>. The symbol for forward Fourier transform is <em>f̂(k)</em> and is defined as:</p>
+      <p><strong>F(k) = ∫<sub>−∞</sub><sup>∞</sup> f(x)e<sup>-2πikx</sup> dx</strong></p>
+
+      <h3>Inverse Fourier Transform</h3>
+      <p>The inverse Fourier transform is the process of converting a frequency-domain representation of a signal back into its time-domain form. This is the reverse process of the forward Fourier transform. Inverse Fourier Transform is represented by <em>f(x)</em>. Symbol for Inverse Fourier transform is <em>f̌(x)</em> and is defined as:</p>
+      <p><strong>f(x) = F<sup>-1</sup>[F(k)](x) = ∫<sub>−∞</sub><sup>∞</sup> F(k)e<sup>2πikx</sup> dk</strong></p>
+
+      <h3>Properties of Fourier Transform</h3>
+      <p>If <em>a(t)</em> has a Fourier transform <em>A(f)</em>, then Fourier transform of <em>A(t)</em> is <em>a(-f)</em>. It is called the duality property. Fourier transform is a linear transform. It is called linear transform. Modulation property is the property in which the function is modulated by other function. A shift in the time domain corresponds to a phase shift in the frequency domain in Fourier Transform. Multiplying a time-domain signal by a complex exponential corresponds to a shift in the frequency domain in Fourier Transform. In Fourier Transform taking the complex conjugate of the time-domain signal corresponds to taking the complex conjugate of the frequency-domain signal and reversing the frequency.</p>
+
+      <h3>Fourier Transform Table</h3>
+      <p>The table below shows the Fourier transform of various functions.</p>
+      <table>
+        <thead>
+          <tr><th>Functions</th><th>f(x)</th><th>F(k) = Fx[f(x)]</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>δ(k)</td><td>Sine Function sin(2πk<sub>0</sub>x) → (1/2) × i × [δ(k + k<sub>0</sub>) - δ(k - k<sub>0</sub>)]</td></tr>
+          <tr><td>2</td><td>cos(2πk<sub>0</sub>x)</td><td>(1/2) × [δ(k + k<sub>0</sub>) + δ(k - k<sub>0</sub>)]</td></tr>
+          <tr><td>3</td><td>-PV(1/πx)</td><td>i[1 - 2H(-k)]</td></tr>
+          <tr><td>4</td><td>e<sup>-2πk<sub>0</sub>|x|</sup></td><td>(1/π)[k<sub>0</sub> / (k<sup>2</sup> + k<sub>0</sub><sup>2</sup>)]</td></tr>
+          <tr><td>5</td><td>e<sup>-ax<sup>2</sup></sup></td><td>e<sup>-π<sup>2</sup>k<sup>2</sup>/a</sup></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Applications of Fourier Transform</h3>
+      <p>Fourier transforms are used in signal processing, telecommunications, audio processing, and image processing. Fourier transforms are used to reduce noise, compression, etc. It is also used to represent the wave propagation, analysis of electrical signals and many more. The special form of Fourier transforms is used to represent periodic functions and infinite series in mathematics.</p>
+    `,
     url: "https://electronicsgurukulam.blogspot.com/2021/05/basics-of-fourier-transform.html",
     emoji: "📈",
     color: "#f59e0b",
