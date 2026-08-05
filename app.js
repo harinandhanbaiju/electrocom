@@ -224,6 +224,8 @@ document.addEventListener('DOMContentLoaded', () => {
     activeArticleId = gurukulamArticles[0].id;
   }
   renderArticles();
+
+
 });
 
 // Tab Switcher
@@ -266,6 +268,8 @@ function switchTab(tabId) {
       animationFrameId = null;
     }
   }
+
+
 }
 
 // Render components in catalog grid
@@ -1668,3 +1672,4 @@ function renderArticleReader(article) {
       </div>
     </article>`;
 }
+
