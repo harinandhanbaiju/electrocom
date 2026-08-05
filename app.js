@@ -1545,7 +1545,8 @@ function renderArticles() {
   }
 
   articlesGrid.innerHTML = filtered.map(article => `
-    <button class="item-card article-card ${article.id === activeArticleId ? 'is-selected' : ''}" type="button"
+    <div class="item-card article-card ${article.id === activeArticleId ? 'is-selected' : ''}"
+       role="button" tabindex="0"
        data-article-id="${article.id}"
        style="--art-color:${article.color}; --art-glow:${article.glow};"
        id="article-${article.id}" aria-pressed="${article.id === activeArticleId ? 'true' : 'false'}">
@@ -1559,18 +1560,44 @@ function renderArticles() {
       <div class="article-tags">
         ${article.tags.map(t => `<span class="article-tag">${t}</span>`).join('')}
       </div>
-      <div class="card-footer-info">
-        <span class="price-tag">Open popup</span>
-        <i data-lucide="arrow-up-right" style="width: 16px; height: 16px;"></i>
+      <div class="article-footer">
+        <span class="article-footer-label">Open popup</span>
+        ${article.youtubeUrl ? `
+          <a class="article-youtube-link" href="${article.youtubeUrl}" target="_blank" rel="noreferrer noopener">
+            <i data-lucide="youtube" style="width: 16px; height: 16px;"></i>
+            <span>Watch on YouTube</span>
+          </a>
+        ` : ''}
       </div>
-    </button>
+    </div>
   `).join('');
 }
 
 if (articlesGrid) {
   articlesGrid.addEventListener('click', (event) => {
+    if (event.target.closest('.article-youtube-link')) return;
+
     const card = event.target.closest('.article-card');
     if (!card) return;
+
+    const articleId = Number(card.getAttribute('data-article-id'));
+    const article = gurukulamArticles.find(item => item.id === articleId);
+    if (!article) return;
+
+    activeArticleId = article.id;
+    renderArticles();
+    showArticleDetails(article);
+  });
+
+  articlesGrid.addEventListener('keydown', (event) => {
+    if (event.target.closest('.article-youtube-link')) return;
+
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+
+    const card = event.target.closest('.article-card');
+    if (!card) return;
+
+    event.preventDefault();
 
     const articleId = Number(card.getAttribute('data-article-id'));
     const article = gurukulamArticles.find(item => item.id === articleId);

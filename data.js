@@ -656,6 +656,7 @@ const gurukulamArticles = [
     category: "Signal Processing",
     summary: "A six-minute video that demystifies the Fourier Transform — the mathematical tool that decomposes any signal into its constituent sine waves. Indispensable for audio engineering, telecommunications, image processing and every branch of digital signal processing.",
     tags: ["Fourier", "DSP", "Frequency Domain", "Spectrum", "Maths"],
+    youtubeUrl: "https://www.youtube.com/watch?v=Og6JDPxQBFM",
     contentHtml: `
       <p>Fourier transform is a mathematical model that decomposes a function or signal into its constituent frequencies. It helps to transform the signals between two different domains, like transforming the frequency domain to the time domain. The Fourier Transform decomposes a complex signal into simpler sine and cosine waves of different frequencies and amplitudes, which can be combined again to reconstruct the original signal. Decomposing a signal into sine and cosine waves using Fourier Transform. The generalized form of the complex Fourier series is referred to as the Fourier transform.</p>
 
@@ -718,6 +719,7 @@ const gurukulamArticles = [
     category: "Signal Processing",
     summary: "Video tutorial bridging theory and practice: Python code for computing the DFT using NumPy's FFT routines, visualising frequency spectra, and applying Fourier-based noise removal to real signals. Perfect for learners who want hands-on DSP experience.",
     tags: ["Python", "FFT", "NumPy", "Noise Removal", "Coding"],
+    youtubeUrl: "https://www.youtube.com/watch?v=-u8cUh8tlXY",
     url: "https://electronicsgurukulam.blogspot.com/2021/05/python-implementation-and-mathematical.html",
     emoji: "🐍",
     color: "#10b981",
@@ -732,7 +734,81 @@ const gurukulamArticles = [
     url: "https://electronicsgurukulam.blogspot.com/2013/11/introduction-to-communication-systems.html",
     emoji: "📡",
     color: "#a855f7",
-    glow: "rgba(168,85,247,0.18)"
+    glow: "rgba(168,85,247,0.18)",
+    contentHtml: `
+      <p>Communication is a process of building a connection or link between one point to another point for exchanging information. Different communication equipment including transmitter, receiver and communication channel assembled that form a communication system. It ensures that data such as voice, video and text is delivered efficiently, accurately and securely. The information being transmitted can be in either analog or digital form, depending on the type of communication system used.</p>
+
+      <p>Examples of the communication system are line telephony and line telegraphy, radio telephony and radiotelegraphy, radio broadcasting, point-to-point communication, mobile communication, computer communication, radar communication, television broadcasting, radio telemetry, radio aids to navigation and aircraft landing, etc.</p>
+
+      <p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20260327163721872675/information_source.webp" alt="Information source" style="max-width:100%;border-radius:12px;display:block;margin:1rem auto;"></p>
+
+      <h2>Block Diagram</h2>
+      <p>Represents the basic structure of a communication system, showing how information is transmitted from the source to the destination through components like transmitter, channel, and receiver, while noise may affect the signal during transmission.</p>
+
+      <h3>Basic Elements</h3>
+      <ul>
+        <li><strong>Information Source:</strong> Generates the message (voice, text, video).</li>
+        <li><strong>Transmitter:</strong> Changes the message into a signal that can be sent through the communication channel (Modulation).</li>
+        <li><strong>Channel:</strong> Medium through which the signal travels (wire, air, optical fiber).</li>
+        <li><strong>Noise:</strong> Unwanted disturbance that affects the signal during transmission.</li>
+        <li><strong>Receiver:</strong> Recovers the original message from the received signal (demodulation).</li>
+        <li><strong>Destination:</strong> Final user or device that receives the message.</li>
+      </ul>
+
+      <h3>Working</h3>
+      <ul>
+        <li>The information source generates the message.</li>
+        <li>The transmitter converts it into a signal.</li>
+        <li>The signal travels through the channel.</li>
+        <li>Noise may affect the signal during transmission.</li>
+        <li>The receiver processes the signal and retrieves the message.</li>
+        <li>The destination receives the final output.</li>
+      </ul>
+
+      <h2>Analog and Digital Communication</h2>
+      <p>Describe the two main ways in which information is transmitted in a communication system.</p>
+
+      <h3>Analog Communication</h3>
+      <ul>
+        <li>Uses continuous signals</li>
+        <li>More affected by noise</li>
+        <li>Example: Radio broadcasting</li>
+      </ul>
+
+      <h3>Digital Communication</h3>
+      <ul>
+        <li>Uses discrete signals (0s and 1s)</li>
+        <li>Less affected by noise</li>
+        <li>Example: Internet communication</li>
+      </ul>
+
+      <h2>Modes of Communication</h2>
+      <p><strong>Broadcasting:</strong> It involves the use of one powerful transmitter and many receivers that are relatively less expensive to build. Information-carrying signals flow only in one direction.</p>
+      <p>Example - Radio broadcasting (FM/AM radio), television broadcasting, and live satellite TV transmission.</p>
+      <p><strong>Point-to-point communication:</strong> Communication process that takes place over a link between a single transmitter and a receiver can be referred to as "point-to-point communication". Usually a bidirectional flow of information-carrying signals, which requires the use of transmitter and receiver at each end of the link.</p>
+      <p>Example - Telephone calls, mobile communication, video conferencing, and direct computer-to-computer communication.</p>
+
+      <h2>Need of Communication System</h2>
+      <ul>
+        <li>To transmit information over short and long distances</li>
+        <li>To enable fast and reliable communication</li>
+        <li>To support real-time communication (calls, video conferencing)</li>
+        <li>To connect devices and networks (internet, mobile systems)</li>
+        <li>To improve efficiency and reduce manual effort</li>
+        <li>To support modern technologies like satellite and wireless communication</li>
+      </ul>
+
+      <h2>Real-World Scenarios</h2>
+      <ul>
+        <li>Making a phone call to talk to someone in another city</li>
+        <li>Sending messages or chatting through mobile apps (WhatsApp, SMS)</li>
+        <li>Watching live TV or listening to radio broadcasts</li>
+        <li>Attending online classes or video meetings (Zoom, Google Meet)</li>
+        <li>Using GPS for navigation and location tracking</li>
+        <li>Browsing the internet and sending emails</li>
+        <li>Communication in airplanes, ships, and military systems</li>
+      </ul>
+    `
   },
   {
     id: 6,
@@ -743,7 +819,37 @@ const gurukulamArticles = [
     url: "https://electronicsgurukulam.blogspot.com/2013/12/introduction-to-mobile-and-cellular.html",
     emoji: "📱",
     color: "#14b8a6",
-    glow: "rgba(20,184,166,0.18)"
+    glow: "rgba(20,184,166,0.18)",
+    contentHtml: `
+      <h3>📱 Core Concepts</h3>
+
+      <ul>
+        <li><strong>Cell Architecture:</strong> The coverage area is divided into cells, each served by a <strong>Base Transceiver Station (BTS)</strong>. This allows efficient frequency reuse and supports large numbers of users.</li>
+        <li><strong>Frequency Reuse Strategy:</strong> By assigning the same frequency bands to non-adjacent cells, networks maximize spectrum efficiency while minimizing interference.</li>
+        <li><strong>Base Transceiver Station (BTS):</strong> Handles radio communication with mobile devices within its cell.</li>
+        <li><strong>Base Station Controller (BSC):</strong> Manages multiple BTS units, controlling handovers and resource allocation.</li>
+        <li><strong>Mobile Switching Centre (MSC):</strong> The central hub that connects calls, manages mobility, and interfaces with external networks like the PSTN (Public Switched Telephone Network).</li>
+      </ul>
+
+      <h3>📡 Evolution of Cellular Systems</h3>
+
+      <ul>
+        <li><strong>2G GSM:</strong> Focused on digital voice communication, introducing SMS and basic data services.</li>
+        <li><strong>3G UMTS:</strong> Added higher-speed data, enabling mobile internet and video calls.</li>
+        <li><strong>4G LTE:</strong> Optimized for data, supporting high-speed internet, streaming, and app-based communication.</li>
+        <li><strong>5G (beyond the article):</strong> Expands capacity with ultra-low latency, massive IoT connectivity, and gigabit speeds.</li>
+      </ul>
+
+      <h3>🔑 Why It Matters</h3>
+
+      <p>Mobile telephony transformed communication by:</p>
+
+      <ul>
+        <li>Allowing seamless mobility (calls and data while moving).</li>
+        <li>Enabling global connectivity through standardized protocols.</li>
+        <li>Laying the foundation for today’s smartphone-driven digital ecosystem.</li>
+      </ul>
+    `
   },
   {
     id: 7,
@@ -754,7 +860,91 @@ const gurukulamArticles = [
     url: "https://electronicsgurukulam.blogspot.com/2013/11/introduction-to-optical-communication.html",
     emoji: "💡",
     color: "#f59e0b",
-    glow: "rgba(245,158,11,0.18)"
+    glow: "rgba(245,158,11,0.18)",
+    contentHtml: `
+      <h3>🌐 What is Optical Communication?</h3>
+
+      <ul>
+        <li><strong>Definition:</strong> Optical communication refers to sending data as light signals through mediums like optical fibers, free space, or photonic devices.</li>
+        <li><strong>Basic Principle:</strong> Information is encoded onto light waves (usually from lasers or LEDs), transmitted through a medium, and decoded by photodetectors at the receiving end.</li>
+        <li><strong>Historical Roots:</strong> Early forms included signal fires and mirrors reflecting sunlight. Modern systems rely on <strong>photonics</strong>, integrating optics and electronics.</li>
+      </ul>
+
+      <h3>🔑 Key Components</h3>
+
+      <ul>
+        <li><strong>Optical Fiber:</strong> Thin strands of glass or plastic that guide light using <strong>total internal reflection</strong>.</li>
+        <li><strong>Single-mode fibers:</strong> Support one light path, ideal for long-distance, high-speed communication.</li>
+        <li><strong>Multi-mode fibers:</strong> Support multiple paths, used for shorter distances.</li>
+        <li><strong>Light Sources:</strong></li>
+        <li><strong>Lasers</strong> (coherent, high intensity, long-distance).</li>
+        <li><strong>LEDs</strong> (cost-effective, short-distance).</li>
+        <li><strong>Photodetectors:</strong> Convert light back into electrical signals (e.g., photodiodes).</li>
+        <li><strong>Amplifiers:</strong> Boost signals over long distances (placed ~80 km apart in fiber networks).</li>
+      </ul>
+
+      <h3>📊 Advantages Over Traditional Communication</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Optical Communication</th>
+            <th>Electrical/Wireless Communication</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Bandwidth</strong></td>
+            <td>~1 terahertz</td>
+            <td>&lt; 2 MHz typical for RF links</td>
+          </tr>
+          <tr>
+            <td><strong>Distance</strong></td>
+            <td>Thousands of km (with amplifiers)</td>
+            <td>Limited to ~50 km for coaxial/wire-pair</td>
+          </tr>
+          <tr>
+            <td><strong>Interference</strong></td>
+            <td>Immune to electromagnetic noise</td>
+            <td>Susceptible to EMI</td>
+          </tr>
+          <tr>
+            <td><strong>Data Rates</strong></td>
+            <td>Extremely high (Gbps to Tbps)</td>
+            <td>Lower, constrained by spectrum</td>
+          </tr>
+          <tr>
+            <td><strong>Security</strong></td>
+            <td>Harder to tap without detection</td>
+            <td>Easier to intercept</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>🚀 Applications</h3>
+
+      <ul>
+        <li><strong>Internet Backbone:</strong> Submarine fiber-optic cables carry global data across oceans.</li>
+        <li><strong>Telecommunications:</strong> High-speed broadband, mobile backhaul, and enterprise networks.</li>
+        <li><strong>Satellite &amp; Space:</strong> Optical links considered for Mars missions and deep-space communication.</li>
+        <li><strong>Medical &amp; Industrial:</strong> Fiber sensors, imaging, and laser-based tools.</li>
+      </ul>
+
+      <h3>⚠️ Challenges</h3>
+
+      <ul>
+        <li><strong>Atmospheric Limitations:</strong> Clouds and fog hinder free-space optical communication.</li>
+        <li><strong>Fiber Installation Costs:</strong> Laying submarine cables and urban fiber networks is expensive.</li>
+        <li><strong>Signal Loss &amp; Dispersion:</strong> Requires advanced techniques like wavelength-division multiplexing (WDM) and error correction.</li>
+      </ul>
+
+      <h3>📌 Conclusion</h3>
+
+      <p>Optical communication is the <strong>foundation of modern digital society</strong>, enabling high-speed internet, global telephony, and secure data transfer. With ongoing advances in <strong>photonics and 5G/6G integration</strong>, it will continue to expand into space communication, IoT, and ultra-fast computing networks.</p>
+
+      <p>Would you like me to also prepare a <strong>simplified diagram of an optical communication system</strong> (showing transmitter, fiber, and receiver) to make this article more visually intuitive?</p>
+    `
   },
   {
     id: 8,
@@ -765,7 +955,79 @@ const gurukulamArticles = [
     url: "https://electronicsgurukulam.blogspot.com/2013/11/introduction-to-satellite-communication.html",
     emoji: "🛰️",
     color: "#10b981",
-    glow: "rgba(16,185,129,0.18)"
+    glow: "rgba(16,185,129,0.18)",
+    contentHtml: `
+      <h3>🛰️ What is Satellite Communication?</h3>
+
+      <p>In general terms, a satellite is a smaller object that revolves around a larger object in space. For example, moon is a natural satellite of earth.</p>
+
+      <p>We know that Communication refers to the exchange (sharing) of information between two or more entities, through any medium or channel. In other words, it is nothing but sending, receiving and processing of information.</p>
+
+      <p>If the communication takes place between any two earth stations through a satellite, then it is called as <strong>satellite communication</strong>. In this communication, electromagnetic waves are used as carrier signals. These signals carry the information such as voice, audio, video or any other data between ground and space and vice-versa.</p>
+
+      <p>Soviet Union had launched the world's first artificial satellite named, <strong>Sputnik 1</strong> in 1957. Nearly after 18 years, India also launched the artificial satellite named, <strong>Aryabhata</strong> in 1975.</p>
+
+      <h3>📡 Need of Satellite Communication</h3>
+
+      <p>The following two kinds of propagation are used earlier for communication up to some distance.</p>
+
+      <ul>
+        <li><strong>Ground wave propagation:</strong> Ground wave propagation is suitable for frequencies up to 30MHz. This method of communication makes use of the troposphere conditions of the earth.</li>
+        <li><strong>Sky wave propagation:</strong> The suitable bandwidth for this type of communication is broadly between 30–40 MHz and it makes use of the ionosphere properties of the earth.</li>
+      </ul>
+
+      <p>The maximum hop or the station distance is limited to 1500KM only in both ground wave propagation and sky wave propagation. Satellite communication overcomes this limitation. In this method, satellites provide communication for long distances, which is well beyond the line of sight.</p>
+
+      <p>Since the satellites locate at certain height above earth, the communication takes place between any two earth stations easily via satellite. So, it overcomes the limitation of communication between two earth stations due to earth's curvature.</p>
+
+      <h3>🔧 How a Satellite Works</h3>
+
+      <p>A satellite is a body that moves around another body in a particular path. A communication satellite is nothing but a <strong>microwave repeater station in space</strong>. It is helpful in telecommunications, radio and television along with internet applications.</p>
+
+      <p>A repeater is a circuit, which increases the strength of the received signal and then transmits it. But, this repeater works as a <strong>transponder</strong>. That means, it changes the frequency band of the transmitted signal from the received one.</p>
+
+      <p>The frequency with which, the signal is sent into the space is called as <strong>Uplink frequency</strong>. Similarly, the frequency with which, the signal is sent by the transponder is called as <strong>Downlink frequency</strong>.</p>
+
+      <p>The transmission of signal from first earth station to satellite through a channel is called as <strong>uplink</strong>. Similarly, the transmission of signal from satellite to second earth station through a channel is called as <strong>downlink</strong>.</p>
+
+      <p>Uplink frequency is the frequency at which, the first earth station is communicating with satellite. The satellite transponder converts this signal into another frequency and sends it down to the second earth station. This frequency is called as Downlink frequency. In similar way, second earth station can also communicate with the first one.</p>
+
+      <p>The process of satellite communication begins at an earth station. Here, an installation is designed to transmit and receive signals from a satellite in an orbit around the earth. Earth stations send the information to satellites in the form of high powered, high frequency (GHz range) signals.</p>
+
+      <p>The satellites receive and retransmit the signals back to earth where they are received by other earth stations in the coverage area of the satellite. Satellite's <strong>footprint</strong> is the area which receives a signal of useful strength from the satellite.</p>
+
+      <h3>✅ Advantages of Satellite Communication</h3>
+
+      <ul>
+        <li>Area of coverage is more than that of terrestrial systems</li>
+        <li>Each and every corner of the earth can be covered</li>
+        <li>Transmission cost is independent of coverage area</li>
+        <li>More bandwidth and broadcasting possibilities</li>
+      </ul>
+
+      <h3>⚠️ Disadvantages of Satellite Communication</h3>
+
+      <ul>
+        <li>Launching of satellites into orbits is a costly process.</li>
+        <li>Propagation delay of satellite systems is more than that of conventional terrestrial systems.</li>
+        <li>Difficult to provide repairing activities if any problem occurs in a satellite system.</li>
+        <li>Free space loss is more.</li>
+        <li>There can be congestion of frequencies.</li>
+      </ul>
+
+      <h3>🚀 Applications of Satellite Communication</h3>
+
+      <p>Satellite communication plays a vital role in our daily life. Following are the applications of satellite communication:</p>
+
+      <ul>
+        <li>Radio broadcasting and voice communications</li>
+        <li>TV broadcasting such as Direct To Home (DTH)</li>
+        <li>Internet applications such as providing Internet connection for data transfer, GPS applications, Internet surfing, etc.</li>
+        <li>Military applications and navigations</li>
+        <li>Remote sensing applications</li>
+        <li>Weather condition monitoring &amp; Forecasting</li>
+      </ul>
+    `
   },
   {
     id: 9,
@@ -776,7 +1038,114 @@ const gurukulamArticles = [
     url: "https://electronicsgurukulam.blogspot.com/2016/01/sannasichakravarthy.html",
     emoji: "📻",
     color: "#a855f7",
-    glow: "rgba(168,85,247,0.18)"
+    glow: "rgba(168,85,247,0.18)",
+    contentHtml: `
+      <h3>📻 TRF vs Superheterodyne Receiver</h3>
+
+      <p>The Tuned Radio Frequency (TRF) receiver is simpler but suffers from poor selectivity and stability at higher frequencies, while the Superheterodyne receiver—developed by Edwin Armstrong—became the dominant design thanks to its superior selectivity, constant gain, and ability to handle a wide range of frequencies.</p>
+
+      <h3>📻 TRF Receiver</h3>
+
+      <p><strong>Structure:</strong> Multiple RF amplifier stages, each with tuned circuits directly tuned to the incoming frequency.</p>
+
+      <p><strong>Operation:</strong> The detector demodulates the original RF signal after amplification.</p>
+
+      <p><strong>Advantages:</strong></p>
+      <ul>
+        <li>Simple design.</li>
+        <li>No image frequency problem.</li>
+      </ul>
+
+      <p><strong>Limitations:</strong></p>
+      <ul>
+        <li>Selectivity decreases at higher frequencies.</li>
+        <li>Difficult to maintain tuning across multiple stages.</li>
+        <li>Amplification varies with frequency.</li>
+        <li>Stability issues due to neutralization requirements in triode amplifiers.</li>
+      </ul>
+
+      <h3>📡 Superheterodyne Receiver</h3>
+
+      <p><strong>Structure:</strong> Includes RF amplifier, mixer, local oscillator, IF amplifier, detector, and AF amplifier.</p>
+
+      <p><strong>Operation:</strong> Incoming RF signal is mixed with a local oscillator to produce a fixed Intermediate Frequency (IF) (commonly 455 kHz). The IF is then amplified and demodulated.</p>
+
+      <p><strong>Advantages:</strong></p>
+      <ul>
+        <li>Constant selectivity and gain since IF is fixed.</li>
+        <li>High fidelity and better rejection of unwanted signals.</li>
+        <li>Easier to design sharp filters at IF.</li>
+      </ul>
+
+      <p><strong>Limitations:</strong></p>
+      <ul>
+        <li>More complex and costly.</li>
+        <li>Produces image frequency, requiring careful filtering.</li>
+      </ul>
+
+      <h3>🔑 Comparison Table</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>TRF Receiver</th>
+            <th>Superheterodyne Receiver</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Design Complexity</strong></td>
+            <td>Simple</td>
+            <td>Complex (multiple stages)</td>
+          </tr>
+          <tr>
+            <td><strong>Selectivity</strong></td>
+            <td>Poor at high frequencies</td>
+            <td>Excellent, constant across band</td>
+          </tr>
+          <tr>
+            <td><strong>Gain Stability</strong></td>
+            <td>Varies with frequency</td>
+            <td>Constant due to fixed IF</td>
+          </tr>
+          <tr>
+            <td><strong>Image Frequency</strong></td>
+            <td>None</td>
+            <td>Present, needs filtering</td>
+          </tr>
+          <tr>
+            <td><strong>Tuning</strong></td>
+            <td>Multiple circuits must track</td>
+            <td>Single tuning control</td>
+          </tr>
+          <tr>
+            <td><strong>Cost</strong></td>
+            <td>Cheaper</td>
+            <td>More expensive</td>
+          </tr>
+          <tr>
+            <td><strong>Applications</strong></td>
+            <td>Early radios, simple sets</td>
+            <td>Modern radios, communication systems</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>⚠️ Practical Notes</h3>
+
+      <ul>
+        <li>TRF receivers were common in the 1920s–1930s, but their limitations made them obsolete.</li>
+        <li>Superheterodyne receivers dominate broadcast radios, televisions, and communication equipment today.</li>
+        <li>Modern SDRs (Software Defined Radios) sometimes revisit direct conversion (Zero-IF), but high-performance designs still rely on superhet stages for selectivity.</li>
+      </ul>
+
+      <h3>📌 Conclusion</h3>
+
+      <p>The TRF receiver is historically important but technically limited. The Superheterodyne receiver remains the standard due to its superior performance, despite added complexity. Understanding both architectures is essential for appreciating the evolution of radio communication systems.</p>
+
+      <p>Would you like me to also create a <strong>block diagram comparison</strong> (TRF vs Superhet stages) to visually illustrate the differences?</p>
+    `
   },
   {
     id: 10,
@@ -787,7 +1156,67 @@ const gurukulamArticles = [
     url: "https://electronicsgurukulam.blogspot.com/2014/12/mosquito-bat.html",
     emoji: "🦟",
     color: "#ef4444",
-    glow: "rgba(239,68,68,0.18)"
+    glow: "rgba(239,68,68,0.18)",
+    contentHtml: `
+      <h3>⚡ Introduction</h3>
+
+      <p>A mosquito racket, also called an electric mosquito swatter, is a handheld device designed to kill mosquitoes and other small flying insects instantly using electricity. It combines simple electronics with a practical design, making it a popular household tool.</p>
+
+      <h3>🔧 Construction</h3>
+
+      <ul>
+        <li><strong>Racket Frame:</strong> Shaped like a tennis racket, with a mesh grid that acts as the killing surface.</li>
+        <li><strong>Mesh Layers:</strong> Usually three layers:
+          <ul>
+            <li>Two outer protective nets (safe to touch).</li>
+            <li>One inner high-voltage net (charged to kill insects).</li>
+          </ul>
+        </li>
+        <li><strong>Handle:</strong> Contains the electronic circuit, rechargeable battery, and switch.</li>
+        <li><strong>Indicator Light:</strong> Shows when the racket is active.</li>
+      </ul>
+
+      <h3>⚙️ Working Principle</h3>
+
+      <ul>
+        <li><strong>Power Supply:</strong> A rechargeable battery (often Li-ion) provides DC voltage.</li>
+        <li><strong>Voltage Booster Circuit:</strong> Converts the low battery voltage (3–5 V) into a high voltage (around 500–1000 V).</li>
+        <li><strong>High-Voltage Mesh:</strong> The central grid is energized with this voltage.</li>
+        <li><strong>Contact with Mosquito:</strong> When a mosquito touches the mesh, it completes the circuit between the high-voltage wires.</li>
+        <li><strong>Electric Shock:</strong> The insect experiences a sudden discharge, killing it instantly.</li>
+      </ul>
+
+      <h3>📊 Advantages</h3>
+
+      <ul>
+        <li>Portable and easy to use.</li>
+        <li>Environmentally friendly (no chemicals).</li>
+        <li>Instant kill, no mess.</li>
+        <li>Rechargeable and long-lasting.</li>
+      </ul>
+
+      <h3>⚠️ Safety Features</h3>
+
+      <ul>
+        <li>Outer mesh prevents accidental human contact with the high-voltage grid.</li>
+        <li>Built-in fuse or circuit protection avoids overload.</li>
+        <li>Indicator light warns when the racket is active.</li>
+      </ul>
+
+      <h3>🚀 Applications</h3>
+
+      <ul>
+        <li>Household mosquito control.</li>
+        <li>Outdoor use in gardens, camping, or picnics.</li>
+        <li>Useful in tropical regions where mosquito-borne diseases are common.</li>
+      </ul>
+
+      <h3>📌 Conclusion</h3>
+
+      <p>A mosquito racket is a simple yet effective electronic device that uses high-voltage discharge to eliminate mosquitoes. Its design balances safety, portability, and efficiency, making it a practical solution for everyday mosquito problems.</p>
+
+      <p>Would you like me to also prepare a <strong>schematic-style diagram</strong> showing the battery, voltage booster, and mesh layers so you can visualize the internal working more clearly?</p>
+    `
   },
   {
     id: 11,
