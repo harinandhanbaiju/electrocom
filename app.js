@@ -1657,7 +1657,7 @@ function renderArticleReader(article) {
         <div>
           <p class="article-reader-kicker">Featured article</p>
           <h2>${article.title}</h2>
-          <p class="article-reader-meta">${article.category} · Electronics Gurukulam</p>
+          <p class="article-reader-meta">${article.category}</p>
         </div>
         <div class="article-reader-emoji" aria-hidden="true">${article.emoji}</div>
       </div>

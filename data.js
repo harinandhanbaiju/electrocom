@@ -1227,7 +1227,52 @@ const gurukulamArticles = [
     url: "https://electronicsgurukulam.blogspot.com/2016/04/sannasichakravarthy.html",
     emoji: "🔥",
     color: "#f59e0b",
-    glow: "rgba(245,158,11,0.18)"
+    glow: "rgba(245,158,11,0.18)",
+    contentHtml: `
+      <p>When you push down on a standard multi-purpose click-lighter, you are interacting with one of the most reliable yet overlooked feats of electromechanical engineering. Without a single battery, capacitor, or microchip, a simple thumb-press generates thousands of volts of electricity to produce a steady flame.</p>
+
+      <p>This article takes a deep dive into the underlying physics and internal mechanisms powering this everyday device.</p>
+
+      <hr>
+
+      <h3>1. Anatomy of a Piezo Lighter Assembly</h3>
+      <p>Inside the durable plastic casing of a click-lighter lies a compact mechanical and electrical assembly engineered for high-speed energy transfer:</p>
+
+      <ul>
+        <li><strong>The Actuator Button:</strong> The physical interface where your thumb applies downward force.</li>
+        <li><strong>The Spring-Loaded Hammer:</strong> Acts as a kinetic energy accumulator. As the button is pressed, the internal spring compresses until a trigger release mechanism lets the hammer snap forward with high velocity.</li>
+        <li><strong>The Piezoelectric Crystal Stack:</strong> Typically composed of specialized ceramic materials like lead zirconate titanate (PZT) or quartz, this is the core energy transducer.</li>
+        <li><strong>The High-Voltage Conductor & Electrode Gap:</strong> A pair of tiny metal terminals placed close to the pressurized gas nozzle to channel the electrical discharge.</li>
+      </ul>
+
+      <hr>
+
+      <h3>2. The Physics: Direct Electromechanical Conversion</h3>
+      <p>The core principle behind the device is the <strong>piezoelectric effect</strong>, originally discovered by Pierre and Jacques Curie in 1880.</p>
+
+      <ol>
+        <li><strong>Kinetic Impact:</strong> When you click the button, the release mechanism causes the spring-loaded hammer to strike the piezoelectric crystal with sudden, concentrated mechanical shock.</li>
+        <li><strong>Crystal Lattice Deformation:</strong> The abrupt force physically distorts the asymmetric crystal lattice structure, temporarily displacing positive and negative ions relative to one another.</li>
+        <li><strong>Charge Separation:</strong> This displacement creates an immediate imbalance of surface charge across opposite faces of the crystal, resulting in an instantaneous high-voltage pulse—frequently reaching <strong>up to 15 kV (15,000 volts)</strong>.</li>
+      </ol>
+
+      <hr>
+
+      <h3>3. From Voltage to Flame</h3>
+      <p>Generating 15,000 volts from a thumb-click is an impressive display of passive engineering, but voltage alone needs a medium to complete its path.</p>
+
+      <ul>
+        <li><strong>Ionization of Air:</strong> The high-voltage pulse forces electrons across the tiny air gap between the electrodes, ionizing the surrounding gas molecules and creating a conductive plasma channel.</li>
+        <li><strong>Combustion:</strong> The resulting electrical arc generates intense localized heat exceeding 1000°C, instantly igniting the surrounding pressurized gas-air mixture emerging from the nozzle.</li>
+      </ul>
+
+      <hr>
+
+      <h3>Why It Matters: Sustainable Transducer Technology</h3>
+      <p>Beyond being a convenient way to light a stove or a campfire, the push-button click-lighter serves as a textbook demonstration of <strong>sustainable transducer technology</strong>. By harnessing mechanical shock to generate high-voltage electrical pulses on demand, it completely eliminates the need for battery replacements.</p>
+
+      <p>These exact same fundamental principles scale up and down across modern engineering—powering everything from industrial vibration energy harvesters and quartz watch oscillators to precision acoustic sensors and medical ultrasound transducers.</p>
+    `
   },
   {
     id: 12,
@@ -1238,13 +1283,94 @@ const gurukulamArticles = [
     url: "https://electronicsgurukulam.blogspot.com/2013/03/magnetic-resonance-imaging.html",
     emoji: "🏥",
     color: "#14b8a6",
-    glow: "rgba(20,184,166,0.18)"
+    glow: "rgba(20,184,166,0.18)",
+    contentHtml: `
+      <p>Magnetic Resonance Imaging (MRI) is widely regarded as one of the most brilliant triumphs of applied electronics, physics, and signal processing in modern medicine. Without exposing the human body to a single ray of ionizing radiation, an MRI machine can generate stunning, high-resolution 3D interior scans of soft tissues, organs, and neurological pathways.</p>
+
+      <p>This article explores the core engineering principles and signal processing techniques that make MRI possible.</p>
+
+      <hr>
+
+      <h3>1. The Core Components of an MRI Scanner</h3>
+      <p>An MRI system is a masterclass in heavy engineering, combining massive superconducting magnets with precision radiofrequency (RF) electronics and rapid digital computing:</p>
+
+      <ul>
+        <li><strong>The Main Superconducting Magnet:</strong> Cooled by liquid helium to near absolute zero to eliminate electrical resistance, this coil produces an immensely powerful, uniform static magnetic field (typically 1.5 to 3 Tesla or higher).</li>
+        <li><strong>Gradient Coils:</strong> Secondary electromagnets placed inside the main bore that rapidly switch on and off to superimpose small magnetic field variations, enabling 3D spatial encoding.</li>
+        <li><strong>RF Transmit & Receive Coils:</strong> Specialized antennae that broadcast high-frequency pulses into the patient and pick up the faint electromagnetic responses emitted by the body.</li>
+        <li><strong>The Reconstruction Pipeline:</strong> High-performance computers that convert raw time-domain signals into diagnostic images via complex mathematical algorithms.</li>
+      </ul>
+
+      <hr>
+
+      <h3>2. The Physics: Alignment and Excitation</h3>
+      <p>The entire imaging process relies on the quantum mechanical property known as <strong>nuclear spin</strong>, specifically targeting the abundant hydrogen protons (<sup>1</sup>H) found in water molecules throughout human tissue.</p>
+
+      <ol>
+        <li><strong>Static Alignment (B<sub>0</sub> Field):</strong> When a patient enters the scanner's powerful static magnetic field, the magnetic moments of their body's hydrogen protons align themselves—either parallel or anti-parallel to the magnetic flux lines. A slight majority align with the field, creating a net longitudinal magnetization vector.</li>
+        <li><strong>RF Excitation (B<sub>1</sub> Field):</strong> The machine then transmits a precise radiofrequency pulse tuned to the Larmor frequency of the protons. This energy knocks the net magnetization vector away from equilibrium, forcing the protons to precess in phase.</li>
+        <li><strong>Relaxation and Emission:</strong> Once the RF pulse is turned off, the protons begin to relax back to their baseline alignment. As they do, they release the absorbed energy by emitting faint radiofrequency signals, which are captured by the receiver coils.</li>
+      </ol>
+
+      <hr>
+
+      <h3>3. Spatial Encoding and Signal Reconstruction</h3>
+      <p>Capturing a signal from the body tells doctors that hydrogen is present, but it does not specify <em>where</em> it is located. This is where electronics and signal processing step in:</p>
+
+      <ul>
+        <li><strong>Gradient Field Encoding:</strong> By pulsing magnetic field gradients across the X, Y, and Z axes during the scan, the system subtly alters the local magnetic field strength. Because resonance frequency varies linearly with magnetic field strength, the emitted signals become frequency- and phase-encoded based on their precise spatial coordinates.</li>
+        <li><strong>The Inverse Fourier Transform:</strong> The raw data collected by the receiver coils is recorded as a matrix of spatial frequencies (known as <em>k-space</em>). To transform this complex dataset into a readable anatomical image, the system applies an <strong>inverse Fourier transform</strong>, decomposing the composite frequency signals into a pixel-by-pixel spatial map.</li>
+      </ul>
+
+      <hr>
+
+      <h3>Why It Matters: Safety and Precision</h3>
+      <p>The engineering brilliance of the MRI scanner lies in its non-invasive nature. By exploiting the subtle magnetic properties of atomic nuclei and utilizing advanced digital signal processing—similar to the foundational Fourier principles used in modern telecommunications—medicine gained a diagnostic window that bypasses the cellular risks of X-rays and computed tomography (CT) scans entirely.</p>
+    `
   },
   {
     id: 13,
     title: "Introduction to Television",
     category: "Applied Electronics",
-    summary: "Traces the complete TV chain: camera pickup tubes converting light to video signal, vestigial-sideband AM video modulation, FM audio modulation, VHF/UHF broadcasting, and the TV receiver's tuner, IF amplifier, video detector, sync separator, and CRT display. Also introduces colour encoding (NTSC, PAL) and modern flat-panel technology.",
+    summary: "Traces the complete analog TV chain\u2014from camera pickup tubes and VSB-AM video modulation to VHF/UHF broadcasting, the receiver\u2019s tuner, IF amplifier, CRT display, and colour encoding systems like NTSC and PAL.",
+    contentHtml: `
+      <p class="article-intro">The journey of television is one of the most remarkable triumphs in the history of applied electronics. Long before digital streaming and flat-panel displays, analog systems accomplished an astonishing feat: capturing moving images and sound, modulating them onto radio waves, and reconstructing them line-by-line on a glass screen&mdash;all within milliseconds.</p>
+
+      <h3 class="article-section-title">1. The Capture Chain: From Light to Video Signal</h3>
+      <p>The broadcast process begins at the camera, where optical images are converted into electrical waveforms.</p>
+      <ul class="article-list">
+        <li><strong>Camera Pickup Tubes:</strong> Early cameras used vacuum tubes such as the <em>Iconoscope</em> or <em>Image Orthicon</em>. An optical lens focused an image onto a photosensitive target plate inside the tube.</li>
+        <li><strong>Electron Scanning:</strong> An electron beam, swept horizontally and vertically by magnetic deflection coils, scanned the target plate to generate a continuous analog voltage waveform representing the brightness (luminance) of each point in the scene.</li>
+        <li><strong>Sync Pulses:</strong> Blanking and synchronization pulses were injected into the signal to mark the end of each horizontal scan line and each complete vertical frame, ensuring precise reconstruction at the receiver.</li>
+      </ul>
+
+      <h3 class="article-section-title">2. Modulation &amp; Broadcasting: Preparing for the Airwaves</h3>
+      <p>The composite video signal and audio had to be transmitted efficiently across radio frequencies.</p>
+      <ul class="article-list">
+        <li><strong>Vestigial-Sideband AM (VSB-AM):</strong> Standard AM doubles the bandwidth required. Television engineers adopted VSB-AM for video&mdash;transmitting the carrier and upper sideband fully, but suppressing most of the lower sideband, fitting high-bandwidth video into standard channel allocations.</li>
+        <li><strong>Frequency Modulation (FM) Audio:</strong> The audio signal used standard FM, providing high fidelity and strong immunity to amplitude-based static interference.</li>
+        <li><strong>VHF/UHF Spectrum:</strong> The combined audio and video were broadcast via high-power transmitters across Very High Frequency (VHF) and Ultra High Frequency (UHF) channels.</li>
+      </ul>
+
+      <h3 class="article-section-title">3. The Receiver Architecture: Tuning &amp; Detection</h3>
+      <p>At the receiving end, an antenna captured the weak broadcast signal for processing and display.</p>
+      <ul class="article-list">
+        <li><strong>Tuner &amp; IF Amplifier:</strong> The front-end tuner selected the desired channel and mixed it down to a standard Intermediate Frequency (IF) via a local oscillator. IF amplifier stages then boosted signal strength while maintaining precise selectivity.</li>
+        <li><strong>Video Detector:</strong> This stage demodulated the VSB-AM signal to recover the baseband composite video waveform.</li>
+        <li><strong>Sync Separator:</strong> Circuitry stripped synchronization pulses from the picture data, routing them to vertical and horizontal deflection circuits to lock the receiver&rsquo;s scanning beam in perfect step with the remote camera.</li>
+      </ul>
+
+      <h3 class="article-section-title">4. The Display: The Cathode Ray Tube (CRT)</h3>
+      <p>The culmination of the analog chain was the Cathode Ray Tube&mdash;a large vacuum tube operating on principles similar to the camera pickup.</p>
+      <ul class="article-list">
+        <li><strong>Electron Gun &amp; Deflection:</strong> An electron gun at the rear of the CRT fired a focused beam of electrons toward the phosphor-coated inner screen. Electromagnetic yokes bent the beam, sweeping it rapidly to paint the image line-by-line.</li>
+        <li><strong>Phosphor Luminescence:</strong> When the high-velocity electron beam struck the phosphors, they glowed for a fraction of a second. By modulating beam intensity in real-time with the incoming video signal, the tube recreated the light and shadow of the original scene.</li>
+      </ul>
+
+      <h3 class="article-section-title">Evolution: Colour Encoding &amp; Beyond</h3>
+      <p>As technology progressed, black-and-white television evolved to support colour while maintaining backward compatibility. Systems like <strong>NTSC</strong>, <strong>PAL</strong>, and <strong>SECAM</strong> multiplexed colour information (chrominance) alongside brightness (luminance) into the same RF bandwidth.</p>
+      <p>Eventually, bulky CRT displays gave way to modern flat-panel technologies (LCD, OLED, microLED), and analog broadcasts transitioned to digital standards (ATSC, DVB). Yet the foundational engineering principles established during the analog era&mdash;modulation, frequency allocation, scanning, and signal reconstruction&mdash;continue to underpin modern communications and display technology.</p>
+    `,
     tags: ["Television", "CRT", "Video Signal", "Modulation", "Broadcasting"],
     url: "https://electronicsgurukulam.blogspot.com/2013/11/introduction-to-television.html",
     emoji: "📺",
@@ -1255,7 +1381,37 @@ const gurukulamArticles = [
     id: 14,
     title: "A Journey Through VLSI",
     category: "Advanced",
-    summary: "A visual journey from basic transistors to billion-transistor chips. Covers CMOS logic, MOSFET scaling, silicon wafer fabrication (lithography, doping, etching), EDA tools for design and verification, and Moore's Law — showing how transistor density has doubled roughly every two years since the 1970s, enabling everything from microprocessors to AI accelerators.",
+    summary: "From discrete transistors to tens of billions on a fingernail-sized chip\u2014exploring CMOS logic, silicon wafer fabrication, EDA tools, and Moore\u2019s Law driving modern microprocessors and AI accelerators.",
+    contentHtml: `
+      <p class="article-intro vlsi-intro">The history of modern electronics is defined by an unprecedented scaling revolution. What began as individual, discrete germanium and silicon transistors has evolved into monolithic integrated circuits containing tens of billions of microscopic transistors on a single piece of silicon the size of a fingernail.</p>
+
+      <h3 class="article-section-title vlsi-section-title">1. The Building Blocks: CMOS Logic</h3>
+      <p>At the heart of nearly all modern digital VLSI chips is Complementary Metal-Oxide-Semiconductor (CMOS) technology.</p>
+      <ul class="article-list vlsi-list">
+        <li><strong>NMOS and PMOS Pairs:</strong> CMOS circuits use complementary pairs of n-type and p-type MOSFETs to form logic gates.</li>
+        <li><strong>Static Power Efficiency:</strong> When in a steady state (either high or low logic level), ideally zero static current flows through CMOS gates, drastically reducing power consumption and heat dissipation compared to older bipolar logic families.</li>
+      </ul>
+
+      <h3 class="article-section-title vlsi-section-title">2. From Sand to Silicon: The Fabrication Workflow</h3>
+      <p>Creating a multi-billion transistor microprocessor requires one of the most complex and precise manufacturing processes in human history, carried out inside ultra-clean semiconductor fabrication facilities (&ldquo;fabs&rdquo;).</p>
+      <ul class="article-list vlsi-list">
+        <li><strong>Ingot Growth &amp; Wafer Slicing:</strong> Pure electronic-grade silicon is grown into a single-crystal cylindrical ingot via the <em>Czochralski process</em> and sliced into ultra-thin circular wafers.</li>
+        <li><strong>Photolithography:</strong> Wafers are coated with photoresist, exposed to ultraviolet (or extreme ultraviolet, EUV) light through precision quartz photomasks, and chemically etched to pattern microscopic circuit features down to the nanometer scale.</li>
+        <li><strong>Doping and Deposition:</strong> Impurities are selectively introduced via ion implantation or thermal diffusion to alter the electrical conductivity of specific silicon regions, building up successive layers of polysilicon, insulators, and metal interconnects.</li>
+      </ul>
+
+      <h3 class="article-section-title vlsi-section-title">3. Electronic Design Automation (EDA)</h3>
+      <p>Designing a circuit with billions of microscopic interconnects is humanly impossible without specialized software. EDA tools act as the essential bridge between human logic design and physical silicon.</p>
+      <ul class="article-list vlsi-list">
+        <li><strong>RTL Design and Synthesis:</strong> Engineers write hardware description languages (Verilog or VHDL) to define circuit behavior, which synthesis tools automatically translate into gate-level netlists.</li>
+        <li><strong>Place and Route (P&amp;R):</strong> Automated algorithms place millions of logic cells across the silicon die and route microscopic copper interconnect wires while minimizing propagation delay, crosstalk, and power loss.</li>
+        <li><strong>Verification and Simulation:</strong> Before tapeout, rigorous timing analysis and physical verification (Design Rule Checking, or DRC) ensure the chip will function correctly under real-world conditions.</li>
+      </ul>
+
+      <h3 class="article-section-title vlsi-section-title">4. Moore&rsquo;s Law and the Future of Scaling</h3>
+      <p>For over half a century, the semiconductor industry has been propelled by <strong>Moore&rsquo;s Law</strong>&mdash;the observation made by Intel co-founder Gordon Moore in 1965 that the number of transistors on a microchip doubles roughly every two years.</p>
+      <p>While classical planar MOSFET scaling has faced severe physical barriers (such as quantum tunneling and leakage current at ultra-small geometries), ongoing innovations like <strong>3D FinFET architectures</strong>, <strong>gate-all-around (GAA) transistors</strong>, and <strong>advanced chiplet packaging</strong> continue to expand the horizons of high-performance computing, enabling everything from advanced microprocessors to modern AI accelerators.</p>
+    `,
     tags: ["VLSI", "CMOS", "Fabrication", "EDA", "Moore's Law"],
     url: "https://electronicsgurukulam.blogspot.com/2013/11/blog-post.html",
     emoji: "🖥️",
@@ -1266,7 +1422,35 @@ const gurukulamArticles = [
     id: 15,
     title: "Instrumentation Amplifier",
     category: "Advanced",
-    summary: "The instrumentation amplifier uses a classic three op-amp topology to amplify tiny differential signals — such as millivolt outputs from strain gauges, thermocouples, or medical electrodes — while rejecting common-mode noise. A single external resistor sets gain, and very high CMRR (common-mode rejection ratio) makes it ideal for noisy industrial environments.",
+    summary: "A three op-amp differential amplifier engineered for precision measurement\u2014offering ultra-high CMRR, single-resistor gain control, and high input impedance for strain gauges, ECG electrodes, and thermocouples in noisy environments.",
+    contentHtml: `
+      <p class="article-intro inamp-intro">In industrial control systems, medical diagnostics, and precision measurement equipment, engineers frequently face a difficult challenge: extracting ultra-low-level differential signals&mdash;such as millivolt outputs from strain gauges, thermocouples, or ECG electrodes&mdash;completely submerged in harsh, high-amplitude common-mode noise. Enter the <strong>instrumentation amplifier (In-Amp)</strong>&mdash;a specialized differential amplifier engineered specifically for high-accuracy measurement applications.</p>
+
+      <h3 class="article-section-title inamp-section-title">1. The Classic Three Op-Amp Topology</h3>
+      <p>While a basic differential amplifier can be built using a single op-amp and four resistors, it suffers from low input impedance and requires extremely tight resistor matching to achieve good common-mode rejection. The standard high-performance In-Amp solves this with a three op-amp architecture:</p>
+      <ul class="article-list inamp-list">
+        <li><strong>Input Buffer Stage:</strong> Two non-inverting op-amps act as high-impedance buffers interfacing directly with the sensor inputs, drawing virtually zero input current and preventing measurement loading.</li>
+        <li><strong>Differential Output Stage:</strong> The buffer outputs feed into a second-stage difference amplifier that subtracts the two signals, amplifying the differential component while stripping away common-mode voltages.</li>
+      </ul>
+
+      <h3 class="article-section-title inamp-section-title">2. Key Performance Characteristics</h3>
+      <p>The In-Amp has become the industry standard for precision analog front-ends due to several unique performance advantages:</p>
+      <ul class="article-list inamp-list">
+        <li><strong>Extremely High CMRR:</strong> In noisy industrial or biomedical environments, unwanted signals (such as 50/60 Hz power-line pickup) couple equally into both signal lines. The In-Amp&rsquo;s symmetrical topology attenuates these common-mode voltages&mdash;often by over <strong>100 dB</strong>&mdash;leaving only the desired differential signal.</li>
+        <li><strong>Single-Resistor Gain Adjustment:</strong> Differential gain is programmed simply by changing the value of a single external gain resistor (<em>R<sub>G</sub></em>) connected between the two input buffers, allowing clean, wide-range gain adjustments without altering resistor ratios across the bridge.</li>
+        <li><strong>High Input Impedance:</strong> Primary inputs feed directly into the non-inverting terminals of the buffer op-amps, presenting extremely high input impedance and making the circuit fully compatible with high-impedance transducers without signal degradation.</li>
+      </ul>
+
+      <h3 class="article-section-title inamp-section-title">3. Real-World Applications</h3>
+      <p>From factory floors to hospital rooms, instrumentation amplifiers form the silent backbone of modern data acquisition:</p>
+      <ul class="article-list inamp-list">
+        <li><strong>Industrial Sensors:</strong> Amplifying minute voltage shifts from bridge circuits in load cells, pressure transducers, and strain gauges.</li>
+        <li><strong>Biomedical Instrumentation:</strong> Extracting delicate bio-potentials in electrocardiogram (ECG) and electroencephalogram (EEG) machines where patient safety and signal purity are paramount.</li>
+        <li><strong>Thermocouple Measurement:</strong> Conditioning low-level thermal electromotive forces in precision temperature controllers.</li>
+      </ul>
+
+      <p>By combining high input impedance, straightforward gain programmability, and exceptional noise immunity, the instrumentation amplifier remains an indispensable cornerstone of modern analog circuit design.</p>
+    `,
     tags: ["Op-Amp", "Differential", "CMRR", "Transducer", "Industrial"],
     url: "https://electronicsgurukulam.blogspot.com/2017/08/instrumentation-amplifier.html",
     emoji: "🔧",
@@ -1277,11 +1461,46 @@ const gurukulamArticles = [
     id: 16,
     title: "Introduction to Android Applications",
     category: "Digital",
-    summary: "A beginner's guide to the Android software stack: Linux kernel at the base, Hardware Abstraction Layer, Android Runtime (ART with ahead-of-time compilation), Application Framework providing APIs, and user-facing Apps. Explains the APK packaging format, the Manifest file, Activity lifecycle, and the general workflow for building and deploying Android apps.",
+    summary: "A layered look at the Android software stack\u2014from the Linux kernel and HAL through ART, the Application Framework, APK packaging, the AndroidManifest, Activity lifecycle, and the Gradle build pipeline.",
+    contentHtml: `
+      <p class="article-intro android-intro">Android powers billions of devices globally, functioning as far more than just a mobile operating system&mdash;it is a comprehensive, layered software stack. From deep system-level hardware abstraction to user-facing application packages, building for Android requires understanding how code interacts with both the silicon underneath and the platform&rsquo;s rigorous component lifecycle.</p>
+
+      <h3 class="article-section-title android-section-title">1. The Android Software Stack</h3>
+      <p>The Android platform is structured in distinct layers, ensuring applications run smoothly across a massive diversity of hardware configurations:</p>
+      <ul class="article-list android-list">
+        <li><strong>Linux Kernel:</strong> Sitting at the absolute base, the customized Linux kernel handles core system services&mdash;security, memory management, process scheduling, the network stack, and a robust driver model that interfaces with physical hardware.</li>
+        <li><strong>Hardware Abstraction Layer (HAL):</strong> Positioned just above the kernel, the HAL provides standard interfaces that expose device hardware capabilities (cameras, Bluetooth, audio sensors) to the higher-level Java/Kotlin API framework without exposing proprietary low-level driver implementations.</li>
+        <li><strong>Android Runtime (ART):</strong> Modern Android uses ART, which employs both <em>ahead-of-time (AOT)</em> and <em>just-in-time (JIT)</em> compilation to convert application bytecode into native machine instructions, optimizing CPU performance and battery life.</li>
+        <li><strong>Application Framework:</strong> A rich set of managers and APIs&mdash;including the Activity Manager, View System, Content Providers, and Notification Manager&mdash;that developers use to build and structure their applications.</li>
+        <li><strong>System Apps &amp; User Applications:</strong> The topmost layer, consisting of pre-installed core apps (dialer, browser, settings) and third-party applications downloaded by users.</li>
+      </ul>
+
+      <h3 class="article-section-title android-section-title">2. Packaging and Structure: The APK and Manifest</h3>
+      <p>When compiled and prepared for deployment, an Android application takes on a specific format and relies on essential configuration files:</p>
+      <ul class="article-list android-list">
+        <li><strong>The APK Format:</strong> An application is bundled into a compressed <em>.apk</em> file (or the modern App Bundle format for Google Play), containing compiled bytecode (<em>.dex</em>), compiled resources, assets, and native libraries.</li>
+        <li><strong>The AndroidManifest.xml File:</strong> Every Android project requires a manifest file&mdash;the fundamental blueprint for the OS. It declares the app&rsquo;s package name, components (activities, services, broadcast receivers), minimum SDK version, and necessary hardware or software permissions (internet access, camera usage, etc.).</li>
+      </ul>
+
+      <h3 class="article-section-title android-section-title">3. The Activity Lifecycle and Component Model</h3>
+      <p>Unlike desktop software that runs continuously until closed, Android applications are component-driven and managed dynamically by the system to conserve resources.</p>
+      <ul class="article-list android-list">
+        <li><strong>Activities and Views:</strong> An Activity represents a single screen with a user interface, built using a hierarchy of UI views and layouts.</li>
+        <li><strong>State Management:</strong> Because mobile devices juggle incoming calls, background tasks, and rapid user switching, the Android system can pause, stop, or kill background apps to reclaim memory. Every activity transitions through strict lifecycle callbacks&mdash;<code>onCreate()</code>, <code>onStart()</code>, <code>onResume()</code>, <code>onPause()</code>, <code>onStop()</code>, and <code>onDestroy()</code>&mdash;allowing developers to save data, release hardware resources, and restore UI states seamlessly.</li>
+      </ul>
+
+      <h3 class="article-section-title android-section-title">Development Workflow</h3>
+      <p>Building and deploying an Android application follows a well-defined engineering pipeline:</p>
+      <ul class="article-list android-list">
+        <li><strong>Source Coding:</strong> Writing business logic and UIs using <em>Kotlin</em> or <em>Java</em> within Android Studio.</li>
+        <li><strong>Build and Compilation:</strong> The <em>Gradle</em> build system compiles source files, processes resource tables, and packs everything into executable Dalvik Executable (<em>.dex</em>) files.</li>
+        <li><strong>Testing and Deployment:</strong> Developers deploy to physical devices or virtual emulators for debugging, performance profiling, and final distribution to app stores.</li>
+      </ul>
+    `,
     tags: ["Android", "Mobile Dev", "APK", "Activity", "Java/Kotlin"],
     url: "https://electronicsgurukulam.blogspot.com/2013/12/introduction-to-android-applications.html",
     emoji: "🤖",
-    color: "#10b981",
-    glow: "rgba(16,185,129,0.18)"
+    color: "#06b6d4",
+    glow: "rgba(6,182,212,0.18)"
   }
 ];
